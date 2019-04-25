@@ -1,6 +1,6 @@
 {
   "name": "@windyroad/cucumber-js-throwables",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides `Error` classes for cucumber-js that can be used to generate `pending` and `skipped` results",
   "main": "lib/index.js",
   "scripts": {
