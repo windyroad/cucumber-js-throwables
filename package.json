@@ -14,7 +14,8 @@
     "npm-check-unused": "npm-check",
     "test:wip": "node node_modules/.bin/cucumber-js --format-options '{\"snippetInterface\": \"async-await\", \"snippetSyntax\": \"src/custom-cucumber-syntax.js\"}' --require-module @babel/register --require-module @babel/polyfill --no-strict -r src/test/js src/test/resources/features/**/*.feature -t @wip --fail-fast",
     "test:wip:debug": "npm run test:wip -- --inspect-brk",
-    "build": "babel src -d lib --source-maps"
+    "build": "babel src -d lib --source-maps",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
