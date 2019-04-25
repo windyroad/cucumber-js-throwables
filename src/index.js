@@ -17,16 +17,13 @@ function getParamNames (func) {
 
 function stepDefinitionWrapper (fn /* options = {} */) {
   const fnArgs = getParamNames(fn)
-  const logger = this.logger
   if (fnArgs.includes('callback')) {
     return function callbackWrapper (...args) {
       try {
         return fn.bind(this)(...args)
       } catch (e) {
         if (e instanceof CucumberError) {
-          if (logger) {
-            logger(e)
-          }
+          console.error(e)
           return args[args.length - 1](null, e.cukeReturnString())
         } else {
           throw e
@@ -39,9 +36,7 @@ function stepDefinitionWrapper (fn /* options = {} */) {
       return await fn.bind(this)(...args)
     } catch (e) {
       if (e instanceof CucumberError) {
-        if (logger) {
-          logger(e)
-        }
+        console.error(e)
         return e.cukeReturnString()
       } else {
         throw e
