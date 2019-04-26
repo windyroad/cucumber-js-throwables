@@ -8,8 +8,6 @@ I used to heavily use `PendingException` when writing Java code as it allowed me
 
 This isn't as doable in [cucumber-js](https://github.com/cucumber/cucumber-js), because in the step definition, you either need to `return 'pending'` (for no callback) or call ``
 
-I really miss [`PendingException` from cucumber-jvm](https://github.com/cucumber/cucumber-jvm/blob/master/core/src/main/java/cucumber/api/PendingException.java)
-
 # Usage
 
 ## Add Wrapper
