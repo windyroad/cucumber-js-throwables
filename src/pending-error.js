@@ -1,6 +1,6 @@
-import CucumberError from './cucumber-error'
+import { CucumberError } from './cucumber-error'
 
-class PendingError extends CucumberError {
+export class PendingError extends CucumberError {
   constructor (...args) {
     super(...args)
     Object.defineProperty(this, 'name', {
@@ -13,5 +13,3 @@ class PendingError extends CucumberError {
     return 'pending'
   }
 }
-
-export default PendingError

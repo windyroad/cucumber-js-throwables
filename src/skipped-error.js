@@ -1,6 +1,5 @@
-import CucumberError from './cucumber-error'
-
-class SkippedError extends CucumberError {
+import { CucumberError } from './cucumber-error'
+export class SkippedError extends CucumberError {
   constructor (...args) {
     super(...args)
     Object.defineProperty(this, 'name', {
@@ -13,5 +12,3 @@ class SkippedError extends CucumberError {
     return 'skipped'
   }
 }
-
-export default SkippedError

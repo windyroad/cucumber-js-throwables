@@ -1,7 +1,6 @@
-import { setDefinitionFunctionWrapper } from 'cucumber'
-import CucumberError from './cucumber-error'
-import PendingError from './pending-error'
-import SkippedError from './skipped-error'
+import { CucumberError } from './cucumber-error'
+import { PendingError } from './pending-error'
+import { SkippedError } from './skipped-error'
 
 // from https://stackoverflow.com/a/9924463
 const STRIP_COMMENTS = /(\/\/.*$)|(\/\*[\s\S]*?\*\/)|(\s*=[^,)]*(('(?:\\'|[^'\r\n])*')|("(?:\\"|[^"\r\n])*"))|(\s*=[^,)]*))/gm
@@ -45,13 +44,4 @@ function stepDefinitionWrapper (fn /* options = {} */) {
   }
 }
 
-stepDefinitionWrapper.logger = console.error
-
-setDefinitionFunctionWrapper(stepDefinitionWrapper)
-
-export default {
-  stepDefinitionWrapper: stepDefinitionWrapper,
-  CucumberError: CucumberError,
-  PendingError: PendingError,
-  SkippedError: SkippedError
-}
+export { stepDefinitionWrapper, CucumberError, PendingError, SkippedError }
